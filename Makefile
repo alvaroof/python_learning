@@ -154,7 +154,10 @@ install: ## Install the package to the active Python's site-packages
 	$(POETRY) install
 
 jupyter: ## Launch Jupyter notebook
-	export PYTHONPATH=$(shell pwd) && jupyter notebook
+	export PYTHONPATH=$(shell pwd) && jupyter notebook --allow-root
+
+jupyterlab: ## Launch Jupyter notebook
+	export PYTHONPATH=$(shell pwd) && jupyter lab --allow-root
 
 http: ## Launch HTTP server in localhost (in the first available port between 8000 and 8999)
 	@$(PYTHON) -c "$$HTTP_SERVER_PYSCRIPT"

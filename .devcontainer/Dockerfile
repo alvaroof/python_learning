@@ -34,6 +34,7 @@ RUN echo "Install Conda..."\
  && curl https://repo.anaconda.com/archive/Anaconda3-2022.10-Linux-x86_64.sh --progress-bar -o installer.sh\
  && bash installer.sh -b -p $HOME/anaconda3
  && rm installer.sh
+ && conda install -c conda-forge mamba
 
 # Upgrade pip then install poetry and wheel
 RUN pip3 install --no-cache-dir --upgrade pip \
