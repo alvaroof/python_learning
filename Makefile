@@ -56,6 +56,7 @@ help:
 venv: ## Make Python virtual environment
 	$(PIP) install --no-cache-dir --upgrade pip
 	$(PIP) install --no-cache-dir wheel poetry
+	$(POETRY) lock
 	$(POETRY) config virtualenvs.create false
 	$(POETRY) config experimental.system-git-client true
 	$(POETRY) install --all-extras
