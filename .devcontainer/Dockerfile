@@ -30,7 +30,8 @@ RUN apt-get update &&\
  procps\
  wget\
  zsh\
- git-lfs
+ git-lfs\
+ graphviz
 
  # Install basic packages
 RUN curl -k https://packages.microsoft.com/keys/microsoft.asc | apt-key add -\
