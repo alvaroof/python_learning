@@ -22,4 +22,7 @@ poetry completions zsh > ~/.zfunc/_poetry
 echo "fpath+=~/.zfunc/_poetry" >> ~/.zshrc
 echo "autoload -Uz compinit && compinit" >> ~/.zshrc
 
+# pip3 install --no-cache-dir -r requirements.txt
+pip3 install --no-cache-dir pre-commit
+git-lfs install -f
 pre-commit install --hook-type pre-commit --hook-type pre-push --hook-type pre-merge-commit

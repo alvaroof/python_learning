@@ -4,9 +4,16 @@
 	"name": "python_learning",
 	"build": {
 		"dockerfile": "Dockerfile",
-		"context": "..",
-		"args": {
-		}
+		"context": ".."
+		// ,
+		// "args": {
+		// 	"HTTP_PROXY": "",
+		// 	"HTTPS_PROXY": "",
+		// 	"http_proxy": "",
+		// 	"https_proxy": "",
+		// 	"NO_PROXY": "",
+		// 	"no_proxy": ""
+		// }
 	},
 
 	"runArgs": ["--env-file", ".devcontainer/devcontainer.env"],
@@ -39,9 +46,9 @@
 		"ms-toolsai.jupyter-renderers",
 		"shuworks.vscode-table-formatter",
 		"redhat.vscode-yaml",
-		"trond-snekvik.simple-rst"
+		"trond-snekvik.simple-rst",
 	],
 
 	// Use 'postCreateCommand' to run commands after the container is created.
-	"postCreateCommand": "bash /tmp/config_devcontainer.sh"
+	"postCreateCommand": "bash /tmp/config_devcontainer.sh",
 }
