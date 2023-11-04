@@ -58,7 +58,7 @@ RUN echo "export PATH='$PATH:/opt/mssql-tools/bin'" >> /home/$USER/.bash_profile
 
 # Upgrade pip then install poetry and wheel
 RUN pip3 install --no-cache-dir --upgrade pip \
- && pip3 install --no-cache-dir wheel poetry
+ && pip3 install --no-cache-dir wheel poetry==1.6.0
 
 # Install oh-my-zsh
 RUN yes Y | sh -c "$(curl -k -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
