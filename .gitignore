@@ -129,3 +129,18 @@ data/*
 
 # Testmon data file
 .testmondata
+
+# Common file formats
+*.ipynb
+*.html
+*.png
+*.yml
+*.pdf
+*.svg
+*.eps
+*.jpg
+*.fig
+*.tex
+
+# No notebooks
+notebooks/
