@@ -55,6 +55,7 @@ python-dotenv = "0.20.0"
 radon = "5.1.0"
 semver = "2.13.0"
 snakeviz = "2.1.1"
+openai = ">1"
 
 [tool.poetry.group.docs.dependencies]
 furo = "^2022.12.7"
