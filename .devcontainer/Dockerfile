@@ -41,6 +41,7 @@ RUN curl -k https://packages.microsoft.com/keys/microsoft.asc | apt-key add -\
  mssql-tools\
  unixodbc-dev\
  libgssapi-krb5-2\
+ python3-tk\
  && apt-get clean\
  && rm -rf /var/lib/apt/lists/*
 
@@ -66,3 +67,5 @@ COPY .devcontainer/config_devcontainer.sh /tmp
 COPY --chown=$USER:$USER . /home/$USER/python_learning
 WORKDIR /home/$USER/python_learning
 USER $USER
+
+ARG DEBIAN_FRONTEND=noninteractive
