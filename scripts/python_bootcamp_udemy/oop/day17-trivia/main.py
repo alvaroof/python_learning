@@ -1,4 +1,7 @@
 # -*- coding: utf-8 -*-
+from quiz_manager import QuizManager
 
-
-URL = "https://opentdb.com/api.php?amount=10&type=boolean"
+if __name__ == "__main__":
+    print("\n\nLET's Start the GAME!\n\n")
+    quiz = QuizManager()
+    quiz.start_quiz()
