@@ -1,28 +1,37 @@
 # -*- coding: utf-8 -*-
 """Class exercises."""
+import math
 
 
 class BankAccount:
     """Bank account including an account balance."""
 
     def __init__(self, balance=0):
-        self.balance = balance
+        self._balance = balance
+        self.transactions = []
+        self.transactions.append(("OPEN", balance, balance))
+
+    @property
+    def balance(self):
+        return self._balance
 
     def deposit(self, quantity):
-        self.balance += quantity
+        self._balance += quantity
+        self.transactions.append(("DEPOSIT", quantity, self._balance))
 
     def withdraw(self, quantity):
-        self.balance -= quantity
+        self._balance -= quantity
+        self.transactions.append(("WITHDRAWAL", -quantity, self._balance))
 
-    def transfer(self, BankAccount, quantity):
-        BankAccount.balance += quantity
-        self.balance -= quantity
+    def transfer(self, other, quantity):
+        other._balance += quantity
+        self._balance -= quantity
 
     def __repr__(self):
-        return f"BankAccount(balance={self.balance})"
+        return f"BankAccount(balance={self._balance})"
 
     def __str__(self):
-        return f"A Bank Account with balance={self.balance})"
+        return f"A Bank Account with balance={self._balance})"
 
 
 class SuperMap:
