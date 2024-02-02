@@ -31,7 +31,7 @@ class BankAccount:
         return f"BankAccount(balance={self._balance})"
 
     def __str__(self):
-        return f"A Bank Account with balance={self._balance})"
+        return f"A Bank Account with balance={self._balance}"
 
 
 class SuperMap:
