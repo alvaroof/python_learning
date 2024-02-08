@@ -2,6 +2,9 @@ from functions import call
 from functions import call_later
 from functions import exclude
 from functions import call_logger
+from functions import call_again
+from functions import only_once
+
 
 print(call(int))
 # 0
@@ -42,7 +45,29 @@ def greet(): print("Hello")
 
 greet_now = call_logger(greet)
 
-print(greet_now())
+greet_now()
 # Function started
 # Hello
 # Function returned
+
+names = []
+response, names_as_str = call_again(str, names)
+print(response)
+# '[]'
+names.append("Diane")
+print(names_as_str())
+# "['Diane']"
+
+
+def do_something(x, y):
+    print(f"doing something with {x} and {y}")
+    return x * 2 + y ** 2
+do_something_once = only_once(do_something)
+print(do_something_once(1, 2))
+# doing something with 1 and 2
+# 6
+
+try:
+    do_something_once(1, 2)
+except ValueError as e:
+    print(e)
