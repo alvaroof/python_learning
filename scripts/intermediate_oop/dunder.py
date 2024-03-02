@@ -4,7 +4,20 @@
 
 class ReverseView:
     """Lazily operate on a sequence in reverse."""
+    def __init__(self, list):
+        self.original_list = list
+        self.reversed_list = list[::-1]
+        self.current = self.reversed_list[0]
+        self.high = self.reversed_list[len(self.reversed_list)-1]
+        
+    def __iter__(self):
+        return self
 
+    def __next__(self):
+        self.current += 1
+        if self.current < self.high:
+            return self.current
+        raise StopIteration
 
 class Comparator:
     """Object that is equal to a very small range of numbers."""

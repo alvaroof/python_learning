@@ -63,3 +63,6 @@ circle.diameter = 10
 print(circle.radius)
 print(circle.diameter)
 print(circle.area)
+
+print(mary_account > dana_account)
+

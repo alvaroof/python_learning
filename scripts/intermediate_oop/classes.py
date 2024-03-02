@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 """Class exercises."""
 import math
+from functools import total_ordering
 
-
+@total_ordering
 class BankAccount:
     """Bank account including an account balance."""
 
@@ -32,7 +33,16 @@ class BankAccount:
 
     def __str__(self):
         return f"A Bank Account with balance={self._balance})"
+    
+    def __eq__(self, other):
+        if not isinstance(other, BankAccount):
+            raise NotImplementedError
+        return self.balance == other.balance
 
+    def __lt__(self, other):
+        if not isinstance(other, BankAccount):
+            raise NotImplementedError
+        return self.balance < other.balance
 
 class SuperMap:
     """Data structure for quickly finding objects based on their attributes."""
