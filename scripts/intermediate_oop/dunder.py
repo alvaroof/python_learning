@@ -1,23 +1,22 @@
 # -*- coding: utf-8 -*-
 """Dunder exercises."""
 
-
 class ReverseView:
     """Lazily operate on a sequence in reverse."""
-    def __init__(self, list):
-        self.original_list = list
-        self.reversed_list = list[::-1]
-        self.current = self.reversed_list[0]
-        self.high = self.reversed_list[len(self.reversed_list)-1]
-        
-    def __iter__(self):
-        return self
+    def __init__(self, sequence):
+        self._sequence = sequence
 
-    def __next__(self):
-        self.current += 1
-        if self.current < self.high:
-            return self.current
-        raise StopIteration
+    def __getitem__(self, index): # If it were a dictionary we would use 'key' instead
+        return self._sequence[-index-1]
+    
+    def __str__(self):
+        return f'{self._sequence[::-1]}'
+    
+    def __len__(self):
+        return len(self._sequence)
+    
+class NotImplemented(BaseException):
+    pass
 
 class Comparator:
     """Object that is equal to a very small range of numbers."""
