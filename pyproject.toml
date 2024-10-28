@@ -9,7 +9,7 @@ license = "Propietary"
 
 keywords = ["cookiecutter"]
 
-repository = ""
+repository = "https://github.com/alvaroof/python_learning"
 
 readme = ["README.md", "LICENSE", "RELEASE_NOTES.md"]
 
@@ -31,7 +31,8 @@ exclude = ["tests/*"]
 [tool.poetry.dependencies]
 click = "~8"
 loguru = "~0.6"
-python = "~3.9"
+python = "~3.12"
+tk = "^0.1.0"
 
 [tool.poetry.group.dev.dependencies]
 black = {extras = ["jupyter"], version = "22.6.0"}
@@ -50,7 +51,6 @@ pylint = "2.15.10"
 pytest = "7.2.0"
 pytest-runner = "6.0.0"
 pytest-xdist = "3.1.0"
-pytest-testmon = "1.4.2"
 python-dotenv = "0.20.0"
 radon = "5.1.0"
 semver = "2.13.0"
